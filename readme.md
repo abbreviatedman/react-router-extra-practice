@@ -39,12 +39,12 @@ Once you have installed React Router and confirmed it's in your dependencies, yo
 3. Add a `return` statement that returns a `div` element.
 4. Inside the `div` element, add an `h1` element with the text "Home Page".
 5. Export the `Home` function.
-6. In your `src` directory, create a file named `AppRouter.js`.
-7. Inside `AppRouter.js`, set up the Router by importing the necessary components from `react-router-dom`.
-8. Create a `BrowserRouter` component that wraps your entire application.
-9. Inside the `BrowserRouter`, set up the `Routes` and `Route` components to define your routes.
-10. For now, include only the `Home` component.
-11. Import and use the `AppRouter` component in your `App` component.
+6. In `index.js`, import and wrap your app in the `BrowserRouter` component from `react-router-dom`.
+7. Inside `App.js`, set up the router by importing the necessary components from `react-router-dom`.
+8. In the `return` statement, create a `div` with the `className` of "App".
+9. Inside that `div`, create another `div` with a `className` of "content".
+10.  Inside the "content" `div`, set up the `Routes` and `Route` components to define your routes.
+11. For now, include only the `Home` component.
 12. Start the development server:
 
 ```
@@ -62,7 +62,7 @@ Once you've created the `Home` component and confirmed it renders correctly, you
 3. Add a `return` statement that returns a `div` element.
 4. Inside the `div` element, add an `h1` element with the text "About Page".
 5. Export the `About` function.
-6. Update the `AppRouter` to include the `About` component.
+6. Update the `App` component's routes to include the `About` component.
 
 **Check:** Ensure the `About` component is displayed correctly when you navigate to the `/about` URL.
 
@@ -83,7 +83,7 @@ Once you've created the `About` component and confirmed it renders correctly, yo
 11. Inside the `div` element, map over the `users` state variable and return a nested `div` element for each user in the `users` array. Give each nested `div` the class of `user-item`.
 12. For each user, display the `name`, `email`, and `phone` properties inside `p` elements.
 13. Export the `Users` function.
-14. Update the `AppRouter` to include the `Users` component.
+14. Update the `App` component's routes to include the `Users` component.
 
 **Check**: Ensure the `Users` component fetches and displays the user data correctly when you navigate to the `/users` URL.
 
@@ -99,7 +99,7 @@ Create a navigation bar to help users navigate between the different pages.
 4. Add a `return` statement that returns a `nav` element.
 5. Inside the `nav` element, add `Link` components for Home, About, and Users with `to` attributes set to `/`, `/about`, and `/users` respectively.
 6. Export the `Navbar` function.
-7. Update the `AppRouter` to include the `Navbar` component.
+7. In `App.js`, import the `Navbar` component and render it in the return statement, _inside_ the "App" `div` but _above_ the "content" `div`.
 
 **Check**: Ensure the `Navbar` component is displayed correctly and that the navigation links work as expected.
 
@@ -141,8 +141,7 @@ Once you've styled the Navbar and confirmed it renders correctly, you’re ready
 
 Let's add some basic styling to your application to improve its appearance.
 
-1. Create a CSS file named `App.css` in the `src` directory.
-2. Add styles to ensure your application looks clean and consistent.
+1. Replace the CSS in `App.css` with the following:
 
 **File:** `App.css`
 
@@ -165,7 +164,7 @@ Let's add some basic styling to your application to improve its appearance.
 }
 ```
 
-3. Import the CSS file in your App component.
+2. Import the CSS file in your App component.
 
 **Check**: Ensure the application is styled correctly and that the styling is applied consistently across all components.
 
